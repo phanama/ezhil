@@ -409,3 +409,19 @@ table th, table td {
         margin-top: 10px;
     }
 }
+
+.box { 
+  width: 55px;
+  float: left;
+  margin-right: 10px;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  img {
+    border-radius: 5px;
+  }
+} 

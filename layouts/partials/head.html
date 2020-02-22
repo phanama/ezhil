@@ -1,5 +1,14 @@
 <div class="header">
-	<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+	<h1 class="site-title">
+        <a href="{{ .Site.BaseURL }}">
+            {{- if isset .Site.Params "icon" -}}
+            <div class="box"> 
+                <img src="{{ .Site.Params.icon }}" />
+            </div>
+            {{- end  -}}
+            {{ .Site.Title }}
+        </a>
+    </h1>
 	<div class="site-description">
 		{{- if isset .Site.Params "subtitle" -}}
 		<h2>{{ .Site.Params.Subtitle | markdownify }}</h2>
