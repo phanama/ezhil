@@ -1,12 +1,9 @@
 <div class="footer wrapper">
 	<nav class="nav">
-		<div>{{ with .Site.Copyright }} {{ . }} | {{ end }}Built with <a href="https://gohugo.io">Hugo</a></div>
+        <div>{{ if .Site.Copyright  }}<a href="{{ .Site.BaseURL  }}LICENSE">{{ .Site.Copyright }}</a> | {{ end }}Built with <a href="https://gohugo.io">Hugo</a></div>
 	</nav>
 </div>
 
-{{ if not .Site.IsServer }}
-{{ template "_internal/google_analytics_async.html" . }}
-{{ end }}
 {{- with .Site.Params.Social -}}
 <script>feather.replace()</script>
 {{- end -}}

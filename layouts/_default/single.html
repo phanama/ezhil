@@ -6,7 +6,7 @@
 		{{ partial "head.html" . }}
 
 		<div class="post-header">
-			<h1 class="title">{{ .Title }}</h1>
+            <h1 class="title"><h1a>{{ .Title }}</h1a></h1>{{ if .Draft }} <span class="draft-label">DRAFT</span>{{ end }}
 		</div>
 
 		<div class="markdown">
