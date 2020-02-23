@@ -7,9 +7,7 @@
 		{{ partial "head.html" . }}
 
 		{{ if isset .Data "Term" }}
-            <h1><h1a>Category: {{ .Data.Term }}</h1a></h1>
-		{{ else }}
-            <h1 class="page-title"><h1a>All Notes</h1a></h1>
+            <h2><h1a>Category: {{ .Data.Term }}</h1a></h2>
 		{{ end }}
 
 		<ul class="posts">

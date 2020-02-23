@@ -12,14 +12,14 @@
 			<div class="posts">
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
-				{{ range $paginator.Pages }}
+				{{ range sort $paginator.Pages ".Lastmod" "desc" }}
 				<div class="post">
-                    <h1><a class="title" href="{{ .RelPermalink }}">{{.Title}}</a></h1>{{ if .Draft }} <span class="draft-label">DRAFT</span>{{ end }}
+                    <a class="title" href="{{ .RelPermalink }}">{{ .Lastmod.Format "02-Jan-2006" }} | {{.Title}}</a>{{ if .Draft }} <span class="draft-label">DRAFT</span>{{ end }}
 					<span class="description">
 						{{ if isset .Params "description" }}
+                          <br style="line-height: 10px" />
 						  {{ .Description }}
 						{{ end }}
-						  {{ .Content }}
 					</span>
 				</div>
 				{{ end }}
